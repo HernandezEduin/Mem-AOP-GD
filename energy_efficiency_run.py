@@ -28,7 +28,7 @@ def parse_args(): #Parser with Default Values
     parser.add_argument('--device', type=str, default='cuda', help='Device to use. Either cpu or cuda for gpu')
 
     'Compression'
-    parser.add_argument('--compression', type=int, default=18, help='Number of partitions to keep.')
+    parser.add_argument('--compression', type=int, default=18, help='Number of vectors/batches to keep.')
     parser.add_argument('--compressions-type', type=list, default=['topk', 'weightedk', 'randk'], help='Compression scheme type: topk, weightedk, and/or randk.')
     parser.add_argument('--memory-decay-rate', type=float, default=1.0, help='Memory Decay Rate')
     

@@ -33,7 +33,7 @@ def parse_args():
     parser.add_argument('--simulation-num', type=int, default=10, help='Number of simulations to run')
     
     'Load Details'
-    parser.add_argument('--folder-path', type=str, default='./results/energy/', help='Folder Save file path for Accuracy')
+    parser.add_argument('--folder-path', type=str, default='./results/energy/', help='Folder Save file path for statistics')
     
     args = parser.parse_args()
     return args
