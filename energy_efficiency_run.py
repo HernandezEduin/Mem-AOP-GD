@@ -6,6 +6,7 @@ Created on Tue Oct 12 19:56:05 2021
 Summary: For training on all schemes and ploting for comparison.
 """
 import argparse
+import os
 from utils.parser_utils import str2bool
 from energy_efficiency_simulations import run_experiment
 from energy_efficiency_plots import run_plot
@@ -21,12 +22,13 @@ def parse_args(): #Parser with Default Values
     parser.add_argument('--learning-rate', type=float, default=0.01, help='Learning Rate for the model')
     parser.add_argument('--momentum', type=float, default=0, help='Momentum for model')
     parser.add_argument('--nesterov', type=str2bool, default='False', help='Whether to use Nesterov Momentum')
+    parser.add_argument('--train-state', type=str2bool, default='False', help='Whether to train the networks. If false, only plots the results.')
        
     'Device'
     parser.add_argument('--device', type=str, default='cuda', help='Device to use. Either cpu or cuda for gpu')
 
     'Compression'
-    parser.add_argument('--compression', type=int, default=3, help='Number of partitions to keep.')
+    parser.add_argument('--compression', type=int, default=18, help='Number of partitions to keep.')
     parser.add_argument('--compressions-type', type=list, default=['topk', 'weightedk', 'randk'], help='Compression scheme type: topk, weightedk, and/or randk.')
     parser.add_argument('--memory-decay-rate', type=float, default=1.0, help='Memory Decay Rate')
     
@@ -52,16 +54,19 @@ def parse_args(): #Parser with Default Values
 
 if __name__ == '__main__':
     args = parse_args()
-    if 'None' in args.memory_states:
-        args.memory_states.remove('None')
-        args.memory_state = str2bool('None')
-        run_experiment(args)
-    
-    for comp_type in args.compressions_type:
-        args.compression_type = comp_type
-        for mem_state in args.memory_states:
-            args.memory_state = str2bool(mem_state)
+    if args.train_state:
+        'Training Baseline if it does not exist'
+        if not os.path.isfile(args.folder_path + 'Energy_Efficiency_epochs_' +
+                       str(args.epoch_num) + '_runs' + str(args.simulation_num) + '_vectors' + str(args.batch_size) + '.p'):
+            args.memory_state = str2bool('None')
             run_experiment(args)
+        
+        'Training all other schemes'
+        for comp_type in args.compressions_type:
+            args.compression_type = comp_type
+            for mem_state in args.memory_states:
+                args.memory_state = str2bool(mem_state)
+                run_experiment(args)
 
     if args.plot_comparison:
         args.compressions_type.insert(0,'baseline')

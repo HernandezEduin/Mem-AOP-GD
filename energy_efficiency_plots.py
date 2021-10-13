@@ -78,10 +78,22 @@ def run_plot(args):
     keys = list(data.keys())
     
     plt.close('all')    
-    plt.figure()
     for pet in keys:
         color, linestyle = get_styles(pet)
+        plt.figure(1)
+        plt.plot(np.sqrt(data[pet]['loss'].mean(axis=0)), linestyle=linestyle, color=color, label= pet)
+        
+        plt.figure(2)
         plt.plot(np.sqrt(data[pet]['loss_val'].mean(axis=0)), linestyle=linestyle, color=color, label= pet)
+    
+    plt.figure(1)
+    plt.title('Train Loss - Efficient Energy' + '\nK/D= ' + str(args.compression) + '/' + str(args.batch_size) + ' - $\\alpha$ = ' + str(args.memory_decay_rate))
+    plt.xlabel('Epoch')
+    plt.ylabel('RMSE Loss')
+    plt.legend()
+    plt.grid()
+    
+    plt.figure(2)
     plt.title('Validation Loss - Efficient Energy' + '\nK/D= ' + str(args.compression) + '/' + str(args.batch_size) + ' - $\\alpha$ = ' + str(args.memory_decay_rate))
     plt.xlabel('Epoch')
     plt.ylabel('RMSE Loss')
