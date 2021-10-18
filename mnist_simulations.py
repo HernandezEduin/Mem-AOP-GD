@@ -153,7 +153,7 @@ def memorygrad(self, grad_input, grad_output):
 #-----------------------------------------------------------------------------
 def run_experiment(arg):
     global args
-    args = args
+    args = arg
     #-----------------------------------------------------------------------------
     'Preparing and Checking Parser'    
     if args.compression_type not in ['topk', 'randk', 'weightedk']:
@@ -308,7 +308,7 @@ def run_experiment(arg):
                     'compression_type': args.compression_type}
 
             if args.memory_state == None:
-                pickle.dump(data, open(args.folder_path + args.dataset + '_epochs_' +
+                pickle.dump(data, open(args.folder_path + args.dataset + '_epochs' +
                        str(args.epoch_num) + '_runs' + str(args.simulation_num) + '_vectors' + str(args.batch_size) +
                         '.p', "wb" ) )
             elif args.memory_state == True:

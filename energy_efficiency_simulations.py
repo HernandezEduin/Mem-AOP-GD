@@ -282,7 +282,7 @@ def run_experiment(arg):
                 'compression_type': args.compression_type}
         
         if args.memory_state == None:
-            pickle.dump(data, open(args.folder_path + 'Energy_Efficiency_epochs_' +
+            pickle.dump(data, open(args.folder_path + 'Energy_Efficiency_epochs' +
                    str(args.epoch_num) + '_runs' + str(args.simulation_num) + '_vectors' + str(args.batch_size) +
                     '.p', "wb" ) )
         elif args.memory_state == True:
