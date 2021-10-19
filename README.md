@@ -1,5 +1,5 @@
 # Approximate Outer Product Gradient Descent with Memory
-Code for the numerical experiment of the paper Speeding-Up Back-Propagation in DNN: Approximate Outer Product with Memory.
+Code for the numerical experiment of the paper [Speeding-Up Back-Propagation in DNN: Approximate Outer Product with Memory](https://arxiv.org/abs/2110.09164).
 
 ## Environment
 To use the code, install Anaconda with the following libraries:
@@ -31,4 +31,13 @@ To plot the results from simulations, enter the argument parameters in the follo
 * energy_efficiency_plots.py
 
 ## Reference
-If you use this code, please cite the following paper: {insert paper reference}
+If you use this code, please cite the following [paper](https://arxiv.org/abs/2110.09164):
+
+    @misc{hernandez2021speedingup,
+          title={Speeding-Up Back-Propagation in DNN: Approximate Outer Product with Memory}, 
+          author={Eduin E. Hernandez and Stefano Rini and Tolga M. Duman},
+          year={2021},
+          eprint={2110.09164},
+          archivePrefix={arXiv},
+          primaryClass={cs.LG}
+    }
