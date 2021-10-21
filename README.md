@@ -33,11 +33,9 @@ To plot the results from simulations, enter the argument parameters in the follo
 ## Reference
 If you use this code, please cite the following [paper](https://arxiv.org/abs/2110.09164):
 
-    @misc{hernandez2021speedingup,
-          title={Speeding-Up Back-Propagation in DNN: Approximate Outer Product with Memory}, 
-          author={Eduin E. Hernandez and Stefano Rini and Tolga M. Duman},
-          year={2021},
-          eprint={2110.09164},
-          archivePrefix={arXiv},
-          primaryClass={cs.LG}
+    @article{hernandez2021speeding,
+          title={Speeding-Up Back-Propagation in DNN: Approximate Outer Product with Memory},
+          author={Hernandez, Eduin E and Rini, Stefano and Duman, Tolga M},
+          journal={arXiv preprint arXiv:2110.09164},
+          year={2021}
     }
