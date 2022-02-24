@@ -4,7 +4,13 @@ Code for the numerical experiment of the paper [Speeding-Up Back-Propagation in 
 ## Environment
 To use the code, install Anaconda with the following libraries:
 * conda install scikit-image
+* conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 -c pytorch
+
+For a preferred cuda version, use one of the following instead:
+* conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=9.2 -c pytorch
+* conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10.1 -c pytorch
 * conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10.2 -c pytorch
+* conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0 -c pytorch
 
 ## Reproducing Results
 To reproduce any of the results, run one of the following codes for their corresponding plot in the paper:
