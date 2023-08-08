@@ -1,5 +1,7 @@
+<!--
 # Approximate Outer Product Gradient Descent with Memory
 Code for the numerical experiment of the paper [Speeding-Up Back-Propagation in DNN: Approximate Outer Product with Memory](https://arxiv.org/abs/2110.09164).
+-->
 
 ## Environment
 To use the code, install Anaconda with the following libraries:
@@ -14,12 +16,12 @@ For a preferred cuda version, use one of the following instead:
 
 ## Reproducing Results
 To reproduce any of the results, run one of the following codes for their corresponding plot in the paper:
-* plot_figure_2a.py
-* plot_figure_2b.py
-* plot_figure_2c.py
 * plot_figure_3a.py
 * plot_figure_3b.py
 * plot_figure_3c.py
+* plot_figure_4a.py
+* plot_figure_4b.py
+* plot_figure_4c.py
 
 ## Training Models
 To train a single layered network on any of the schemes, use any of the following with the desired argument parameters:
@@ -36,6 +38,7 @@ To plot the results from simulations, enter the argument parameters in the follo
 * mnist_plots.py
 * energy_efficiency_plots.py
 
+<!--
 ## Reference
 If you use this code, please cite the following [paper](https://arxiv.org/abs/2110.09164):
 
@@ -45,3 +48,4 @@ If you use this code, please cite the following [paper](https://arxiv.org/abs/21
           journal={arXiv preprint arXiv:2110.09164},
           year={2021}
     }
+-->
